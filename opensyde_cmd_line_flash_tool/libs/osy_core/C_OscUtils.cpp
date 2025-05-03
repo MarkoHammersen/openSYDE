@@ -659,11 +659,28 @@ void C_OscUtils::h_FileToString(const C_SclString & orc_FilePath, C_SclString & 
    \param[out]  orf64_Value   Value
 */
 //----------------------------------------------------------------------------------------------------------------------
-void C_OscUtils::h_RangeCheckFloat(float64_t & orf64_Value)
+#if 0 // markoh
+void C_OscUtils::h_RangeCheckFloat(float64_t& orf64_Value)
 {
-   orf64_Value = std::min(orf64_Value, std::numeric_limits<float64_t>::max());
-   orf64_Value = std::max(orf64_Value, -std::numeric_limits<float64_t>::max());
+  orf64_Value = std::min(orf64_Value, std::numeric_limits<float64_t>::max());
+  orf64_Value = std::max(orf64_Value, -std::numeric_limits<float64_t>::max());
 }
+#else
+void C_OscUtils::h_RangeCheckFloat(float64_t& orf64_Value)
+{
+  const float64_t max_value = 1.7976931348623157e+308; // Maximum value for float64_t
+  const float64_t min_value = -1.7976931348623157e+308; // Minimum value for float64_t
+
+  if (orf64_Value > max_value)
+  {
+    orf64_Value = max_value;
+  }
+  else if (orf64_Value < min_value)
+  {
+    orf64_Value = min_value;
+  }
+}
+#endif
 
 //----------------------------------------------------------------------------------------------------------------------
 /*! \brief   load resource string

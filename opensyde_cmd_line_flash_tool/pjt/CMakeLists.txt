@@ -34,13 +34,15 @@ add_subdirectory(${PROJECT_ROOT}/libs/osy_core ${CMAKE_BINARY_DIR}/osy_core)
 # warn a lot
 # Unfortunately forcing C90 by using "-Wc90-c99-compat" or "-std=c89" would (correctly) also prohibit
 #  C++ style comments and there's no switch to explicitly suppress this warning
-set(CMAKE_C_FLAGS "-Wall -Wextra -Wc99-c11-compat -Wunused -Wuninitialized -Wmaybe-uninitialized \
-   -Wdeclaration-after-statement -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes \
-   -Wdouble-promotion -Wfloat-equal -Wmissing-include-dirs -Wshadow -Wundef \
-   -Wunused-macros -Wcast-align -Wlogical-op -Wno-multichar -Wredundant-decls -Wnested-externs")
+set(CMAKE_C_FLAGS "-Wall")
+# markoh set(CMAKE_C_FLAGS "-Wall -Wextra -Wc99-c11-compat -Wunused -Wuninitialized -Wmaybe-uninitialized \
+# markoh    -Wdeclaration-after-statement -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes \
+# markoh    -Wdouble-promotion -Wfloat-equal -Wmissing-include-dirs -Wshadow -Wundef \
+# markoh    -Wunused-macros -Wcast-align -Wlogical-op -Wno-multichar -Wredundant-decls -Wnested-externs")
 # For C++ do not add "-Wdouble-promotion" as it causes a warning in tinyxml.cpp which we do not want to modify
-set(CMAKE_CXX_FLAGS "-std=c++98 -Wall -Wextra -Wunused -Wuninitialized -Wmaybe-uninitialized -Wsign-compare  \
-   -Wmissing-include-dirs -Wshadow -Wlogical-op -Wno-multichar -Wredundant-decls")
+set(CMAKE_CXX_FLAGS "-std=c++98 -Wall")
+# markoh set(CMAKE_CXX_FLAGS "-std=c++98 -Wall -Wextra -Wunused -Wuninitialized -Wmaybe-uninitialized -Wsign-compare  \
+# markoh   -Wmissing-include-dirs -Wshadow -Wlogical-op -Wno-multichar -Wredundant-decls")
 
 # link standard libraries statically
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
@@ -50,9 +52,11 @@ set(OSY_CMD_LINE_FLASH_TOOL_SOURCES
    ${PROJECT_ROOT}/src/main.cpp
    ${PROJECT_ROOT}/src/C_BasicFlashTool.cpp
    ${PROJECT_ROOT}/src/C_BasicUpdateSequence.cpp
+   ${PROJECT_ROOT}/src/getopt.c
 
    ${PROJECT_ROOT}/src/C_BasicFlashTool.hpp
    ${PROJECT_ROOT}/src/C_BasicUpdateSequence.hpp
+   ${PROJECT_ROOT}/src/getopt.h
 
    ../src/resources.rc
 )

@@ -1,0 +1,18 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "pjt\\CMakeLists.txt",
+      "projectTarget": "osy_cmd_line_flash_tool.exe",
+      "name": "osy_cmd_line_flash_tool.exe",
+      "args": [
+        "-f C:\\Projekte\\grast_v3\\ESX_4CT\\appl_boot_core_debug\\appl_boot_core.hex",
+        "-i C:\\stw\\openSYDE\\tool\\STW_dlls\\stwpeak2\\stwpeak2.dll",
+        "-n 126",
+        "-b 250"
+      ]
+    }
+  ]
+}
