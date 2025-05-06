@@ -8,9 +8,9 @@
       "projectTarget": "osy_cmd_line_flash_tool.exe",
       "name": "osy_cmd_line_flash_tool.exe",
       "args": [
-        "-f C:\\Projekte\\grast_v3\\ESX_4CT\\appl_boot_core_debug\\appl_boot_core.hex",
+        "-f C:\\Projekte\\grast_v3\\ESX_4CT\\appl_boot_core_release\\appl_boot_core.hex",
         "-i C:\\stw\\openSYDE\\tool\\STW_dlls\\stwpeak2\\stwpeak2.dll",
-        "-n 126",
+        "-n 0",
         "-b 250"
       ]
     }
