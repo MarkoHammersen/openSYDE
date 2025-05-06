@@ -40,7 +40,7 @@ public:
 
    void Init(void);
    E_Result ParseCommandLine(const int32_t os32_Argc, char_t * const * const oppcn_Argv);
-   E_Result Flash(void);
+   E_Result Flash(bool doReset);
 
 private:
    uint8_t mu8_NodeId;

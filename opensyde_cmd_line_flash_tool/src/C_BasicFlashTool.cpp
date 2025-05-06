@@ -298,7 +298,7 @@ C_BasicFlashTool::E_Result C_BasicFlashTool::ParseCommandLine(const int32_t os32
    eERR_RESET                    Error in call to C_OscBuSequences::ResetSystem
 */
 //----------------------------------------------------------------------------------------------------------------------
-C_BasicFlashTool::E_Result C_BasicFlashTool::Flash(void)
+C_BasicFlashTool::E_Result C_BasicFlashTool::Flash(bool doReset)
 {
    E_Result e_Result = eRESULT_OK;
    C_BasicUpdateSequence c_TheSequence;
@@ -337,13 +337,16 @@ C_BasicFlashTool::E_Result C_BasicFlashTool::Flash(void)
       }
    }
 
-   if ((e_Result == eRESULT_OK) && (mq_StartAppl == true))
+   if (doReset)
    {
-      s32_Return = c_TheSequence.ResetSystem();
-      if (s32_Return != C_NO_ERR)
-      {
+     if ((e_Result == eRESULT_OK) && (mq_StartAppl == true))
+     {
+       s32_Return = c_TheSequence.ResetSystem();
+       if (s32_Return != C_NO_ERR)
+       {
          e_Result = eERR_RESET;
-      }
+       }
+     }
    }
 
    // update log file to recent information
