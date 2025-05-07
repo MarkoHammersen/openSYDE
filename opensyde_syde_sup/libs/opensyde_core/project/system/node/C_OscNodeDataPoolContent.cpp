@@ -1795,7 +1795,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eUINT8:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<uint8_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(255))
             {
                q_Retval = true;
             }
@@ -1806,8 +1806,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if ((static_cast<int64_t>(std::numeric_limits<uint8_t>::min()) <= s64_Value) &&
-                (s64_Value <= static_cast<int64_t>(std::numeric_limits<uint8_t>::max())))
+            if ((static_cast<int64_t>(0) <= s64_Value) &&
+                (s64_Value <= static_cast<int64_t>(255)))
             {
                q_Retval = true;
             }
@@ -1818,8 +1818,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<uint8_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<uint8_t>::max())))
+            if ((static_cast<float64_t>(0) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(255)))
             {
                q_Retval = true;
             }
@@ -1836,7 +1836,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eUINT16:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<uint16_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(65535))
             {
                q_Retval = true;
             }
@@ -1847,8 +1847,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if ((static_cast<int64_t>(std::numeric_limits<uint16_t>::min()) <= s64_Value) &&
-                (s64_Value <= static_cast<int64_t>(std::numeric_limits<uint16_t>::max())))
+            if ((static_cast<int64_t>(0) <= s64_Value) &&
+                (s64_Value <= static_cast<int64_t>(65535)))
             {
                q_Retval = true;
             }
@@ -1859,8 +1859,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<uint16_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<uint16_t>::max())))
+            if ((static_cast<float64_t>(0) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(65535)))
             {
                q_Retval = true;
             }
@@ -1877,7 +1877,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eUINT32:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<uint32_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(UINT32_MAX))
             {
                q_Retval = true;
             }
@@ -1888,8 +1888,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if ((static_cast<int64_t>(std::numeric_limits<uint32_t>::min()) <= s64_Value) &&
-                (s64_Value <= static_cast<int64_t>(std::numeric_limits<uint32_t>::max())))
+            if ((static_cast<int64_t>(0) <= s64_Value) &&
+                (s64_Value <= static_cast<int64_t>(UINT32_MAX)))
             {
                q_Retval = true;
             }
@@ -1900,8 +1900,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<uint32_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<uint32_t>::max())))
+            if ((static_cast<float64_t>(0) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(UINT32_MAX)))
             {
                q_Retval = true;
             }
@@ -1922,7 +1922,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if (static_cast<int64_t>(std::numeric_limits<uint64_t>::min()) <= s64_Value)
+            if (static_cast<int64_t>(0) <= s64_Value)
             {
                q_Retval = true;
             }
@@ -1933,8 +1933,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<uint64_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<uint64_t>::max())))
+            if ((static_cast<float64_t>(0) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(UINT64_MAX)))
             {
                q_Retval = true;
             }
@@ -1951,7 +1951,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eSINT8:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<int8_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(INT8_MAX))
             {
                q_Retval = true;
             }
@@ -1962,8 +1962,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if ((static_cast<int64_t>(std::numeric_limits<int8_t>::min()) <= s64_Value) &&
-                (s64_Value <= static_cast<int64_t>(std::numeric_limits<int8_t>::max())))
+            if ((static_cast<int64_t>(INT8_MIN) <= s64_Value) &&
+                (s64_Value <= static_cast<int64_t>(INT8_MAX)))
             {
                q_Retval = true;
             }
@@ -1974,8 +1974,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<int8_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<int8_t>::max())))
+            if ((static_cast<float64_t>(INT8_MIN) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(INT8_MAX)))
             {
                q_Retval = true;
             }
@@ -1992,7 +1992,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eSINT16:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<int16_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(INT16_MAX))
             {
                q_Retval = true;
             }
@@ -2003,8 +2003,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if ((static_cast<int64_t>(std::numeric_limits<int16_t>::min()) <= s64_Value) &&
-                (s64_Value <= static_cast<int64_t>(std::numeric_limits<int16_t>::max())))
+            if ((static_cast<int64_t>(INT16_MIN) <= s64_Value) &&
+                (s64_Value <= static_cast<int64_t>(INT16_MAX)))
             {
                q_Retval = true;
             }
@@ -2015,8 +2015,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<int16_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<int16_t>::max())))
+            if ((static_cast<float64_t>(INT16_MIN) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(INT16_MAX)))
             {
                q_Retval = true;
             }
@@ -2033,7 +2033,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eSINT32:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<int32_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(INT32_MIN))
             {
                q_Retval = true;
             }
@@ -2044,8 +2044,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsSigned == true)
          {
-            if ((static_cast<int64_t>(std::numeric_limits<int32_t>::min()) <= s64_Value) &&
-                (s64_Value <= static_cast<int64_t>(std::numeric_limits<int32_t>::max())))
+            if ((static_cast<int64_t>(INT32_MIN) <= s64_Value) &&
+                (s64_Value <= static_cast<int64_t>(INT32_MIN)))
             {
                q_Retval = true;
             }
@@ -2056,8 +2056,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<int32_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<int32_t>::max())))
+            if ((static_cast<float64_t>(INT32_MIN) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(INT32_MIN)))
             {
                q_Retval = true;
             }
@@ -2074,7 +2074,7 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
       case C_OscNodeDataPoolContent::eSINT64:
          if (q_ThisBaseIsUnsigned == true)
          {
-            if (u64_Value <= static_cast<uint64_t>(std::numeric_limits<int64_t>::max()))
+            if (u64_Value <= static_cast<uint64_t>(INT64_MIN))
             {
                q_Retval = true;
             }
@@ -2089,8 +2089,8 @@ bool C_OscNodeDataPoolContent::CheckInsideRange(const C_OscNodeDataPoolContent::
          }
          else if (q_ThisBaseIsFloatingPoint == true)
          {
-            if ((static_cast<float64_t>(std::numeric_limits<int64_t>::min()) <= f64_Value) &&
-                (f64_Value <= static_cast<float64_t>(std::numeric_limits<int64_t>::max())))
+            if ((static_cast<float64_t>(INT64_MIN) <= f64_Value) &&
+                (f64_Value <= static_cast<float64_t>(INT64_MIN)))
             {
                q_Retval = true;
             }

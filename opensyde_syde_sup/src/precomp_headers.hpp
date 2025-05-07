@@ -20,6 +20,7 @@
 /* Add C++ includes here */
 
 #ifdef _WIN32
+#define NOMINMAX // markoh - Unless NOMINMAX is defined before including Windows.h, it defines max and min as macros, which interfere with standard C++ symbols like std::numeric_limits<T>::max().
 #include <winsock2.h>
 #include <windows.h>
 #endif
