@@ -1,2 +1,5 @@
 opensyde_syde_sup/bat/GRAST_ServiceUpdatePackage_nodeId_1.syde_sup
 opensyde_syde_sup/bat/GRAST_ServiceUpdatePackage_nodeId_2.syde_sup
+opensyde_cmd_line_flash_tool/bat/1_appl_boot_core.hex
+opensyde_cmd_line_flash_tool/bat/2_safety_core.hex
+.\Logs\*

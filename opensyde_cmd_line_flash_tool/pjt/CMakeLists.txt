@@ -26,8 +26,8 @@ set(OPENSYDE_CORE_SKIP_PARAM_SET                   1)
 set(OPENSYDE_CORE_SKIP_PROTOCOL_DRIVERS_BASIC      0)
 set(OPENSYDE_CORE_SKIP_PROTOCOL_DRIVERS_SYSTEM     1)
 set(OPENSYDE_CORE_SKIP_PROTOCOL_DRIVERS_COMMON     0)
-set(OPENSYDE_CORE_SKIP_WINDOWS_DRIVERS             0)
-set(OPENSYDE_CORE_SKIP_WINDOWS_TARGET              0)
+set(OPENSYDE_CORE_SKIP_WINDOWS_DRIVERS             1)
+set(OPENSYDE_CORE_SKIP_WINDOWS_TARGET              1)
 set(OPENSYDE_CORE_SKIP_PROTOCOL_LOGGING            1)
 add_subdirectory(${PROJECT_ROOT}/libs/osy_core ${CMAKE_BINARY_DIR}/osy_core)
 
@@ -62,11 +62,18 @@ set(OSY_CMD_LINE_FLASH_TOOL_SOURCES
 # define binary name and sources
 add_executable(osy_cmd_line_flash_tool ${OSY_CMD_LINE_FLASH_TOOL_SOURCES})
 
+if(OPENSYDE_CORE_SKIP_WINDOWS_TARGET)
+# add required libraries
+target_link_libraries(osy_cmd_line_flash_tool
+   opensyde_core
+)
+else()
 # add required libraries
 target_link_libraries(osy_cmd_line_flash_tool
    opensyde_core
    version
 )
+endif()
 
 # define precompiled headers for core and application
 target_precompile_headers(opensyde_core PRIVATE ${PROJECT_ROOT}/src/precomp_headers.hpp)

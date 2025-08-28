@@ -63,6 +63,7 @@ C_OscBuSequences::~C_OscBuSequences()
    }
    try
    {
+      #ifdef _WIN32
       if (mc_CanDispatcher.DLL_Close() == C_NO_ERR)
       {
          osc_write_log_info("Teardown", "CAN DLL closed.");
@@ -71,6 +72,7 @@ C_OscBuSequences::~C_OscBuSequences()
       {
          osc_write_log_info("Teardown", "Failed to close CAN DLL.");
       }
+      #endif
    }
    catch (...)
    {
@@ -99,8 +101,10 @@ int32_t C_OscBuSequences::Init(const C_SclString & orc_CanDllPath, const int32_t
 
    ms32_CanBitrate = os32_CanBitrate;
 
+   #ifdef _WIN32
    mc_CanDispatcher.SetDLLName(orc_CanDllPath);
    s32_Return = mc_CanDispatcher.DLL_Open();
+   #endif
    if (s32_Return == C_NO_ERR)
    {
       osc_write_log_info(c_LogActivity, "CAN DLL loaded.");
@@ -749,7 +753,11 @@ int32_t C_OscBuSequences::ResetSystem(void)
    }
    else
    {
+      #ifdef _WIN32
       Sleep(500); //wait a little to make sure the device has performed the reset
+      #else
+      usleep(500 * 1000);  // usleep erwartet Mikrosekunden
+      #endif
       osc_write_log_error(c_LogActivity, "Successfully sent reset to target device!");
    }
 

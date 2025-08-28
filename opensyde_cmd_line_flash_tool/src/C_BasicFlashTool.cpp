@@ -11,10 +11,18 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 /* -- Includes ------------------------------------------------------------------------------------------------------ */
+/* -- Includes ------------------------------------------------------------------------------------------------------ */
 #include "precomp_headers.hpp"
 
-#include <getopt.h> //note: as we use getopt.h this application is not portable to all compilers
+#ifdef _WIN32
 #include <conio.h>
+#include <windows.h>
+#else
+#include <getopt.h>
+#include <unistd.h>
+#include <termios.h>
+#include <fcntl.h>
+#endif
 
 #include "stwtypes.hpp"
 #include "stwerrors.hpp"
@@ -24,6 +32,7 @@
 #include "C_OscBinaryHash.hpp"
 #include "C_BasicUpdateSequence.hpp"
 #include "C_BasicFlashTool.hpp"
+
 
 /* -- Used Namespaces ----------------------------------------------------------------------------------------------- */
 using namespace stw::scl;
@@ -383,13 +392,12 @@ C_BasicFlashTool::E_Result C_BasicFlashTool::Flash(void)
 //----------------------------------------------------------------------------------------------------------------------
 C_SclString C_BasicFlashTool::mh_GetApplicationVersion(const stw::scl::C_SclString & orc_FileName)
 {
+#ifdef _WIN32
    VS_FIXEDFILEINFO * pc_Info;
    uint32_t u32_ValSize;
    int32_t s32_InfoSize;
    uint8_t * pu8_Buffer;
-   C_SclString c_Version;
-
-   c_Version = "V?.\?\?r?";
+   C_SclString c_Version = "V?.??r?";
 
    s32_InfoSize = GetFileVersionInfoSizeA(orc_FileName.c_str(), NULL);
    if (s32_InfoSize != 0)
@@ -397,12 +405,12 @@ C_SclString C_BasicFlashTool::mh_GetApplicationVersion(const stw::scl::C_SclStri
       pu8_Buffer = new uint8_t[static_cast<uint32_t>(s32_InfoSize)];
       if (GetFileVersionInfoA(orc_FileName.c_str(), 0, s32_InfoSize, pu8_Buffer) != FALSE)
       {
-         //reinterpret_cast required due to function interface
          if (VerQueryValueA(pu8_Buffer, "\\",
-                            reinterpret_cast<PVOID *>(&pc_Info), //lint !e9176
+                            reinterpret_cast<LPVOID *>(&pc_Info),
                             &u32_ValSize) != FALSE)
          {
-            c_Version.PrintFormatted("V%d.%02dr%d", (pc_Info->dwFileVersionMS >> 16U),
+            c_Version.PrintFormatted("V%d.%02dr%d",
+                                     (pc_Info->dwFileVersionMS >> 16U),
                                      pc_Info->dwFileVersionMS & 0x0000FFFFUL,
                                      (pc_Info->dwFileVersionLS >> 16U));
          }
@@ -410,7 +418,13 @@ C_SclString C_BasicFlashTool::mh_GetApplicationVersion(const stw::scl::C_SclStri
       delete[] pu8_Buffer;
    }
    return c_Version;
+#else
+   // Unter Linux keine Ressourcen-Version: Dummy zurückgeben
+   (void)orc_FileName;
+   return "V?.??r?";
+#endif
 }
+
 
 //----------------------------------------------------------------------------------------------------------------------
 /*! \brief  Print help information to command line
@@ -438,6 +452,42 @@ void C_BasicFlashTool::m_PrintHelp(void)
    std::cout << "Parameters that have a \"Default\" are optional. All others are mandatory.\n";
 }
 
+#ifndef _WIN32
+// einfacher Ersatz für kbhit() auf POSIX
+static int kbhit(void)
+{
+    struct termios oldt, newt;
+    int ch;
+    int oldf;
+    int ret;
+
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+    fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+
+    ch = getchar();
+
+    if (ch != EOF)
+    {
+        ungetc(ch, stdin);
+        ret = 1;
+    }
+    else
+    {
+        ret = 0;
+    }
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    fcntl(STDIN_FILENO, F_SETFL, oldf);
+
+    return ret;
+}
+#endif
+
+
 //----------------------------------------------------------------------------------------------------------------------
 /*! \brief  Pause the tool and wait for user interaction to go on
 */
@@ -459,3 +509,4 @@ void C_BasicFlashTool::m_Pause(void)
       }
    }
 }
+
