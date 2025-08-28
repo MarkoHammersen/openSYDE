@@ -1,44 +1,54 @@
 #!/bin/bash
-#script usage: 
-# * ./build.sh -> build a cmake configuration, compile project and install build target
-# * ./build.sh -l -> "-l(int_config)" -> only build cmake configuration (needed for pc_lint_plus scripts)
+# script usage: 
+# * ./build.sh       -> build a cmake configuration, compile only changed files and install build target
+# * ./build.sh -l    -> only build cmake configuration (needed for pc_lint_plus scripts)
+# * ./build.sh -c    -> clean build directory and exit
+# * ./build.sh -d    -> build in Debug mode
 
 build_only_lint_config=false
+build_type="Release"
 
 # exit with error code if a command fails
 set -e
 
-while getopts ':l' flag; do
+while getopts ':lcd' flag; do
  case "$flag" in
     l)
         echo "Only build cmake configuration for pc_lint usage"
         build_only_lint_config=true
         ;;
+    c)
+        echo "Cleaning build directory..."
+        [ -d ../temp ] && rm -rf ../temp
+        echo "✅ Clean complete."
+        exit 0
+        ;;
+    d)
+        echo "Debug build selected"
+        build_type="Debug"
+        ;;
    \?)
         echo "script usage:"
-        echo "./build.sh -> compile project"
-        echo "./build.sh -l -> -l(int_config) -> only build cmake configuration (for pc_lint usage)"
+        echo "  ./build.sh      -> build changed files and install project"
+        echo "  ./build.sh -l   -> only cmake config (pc_lint usage)"
+        echo "  ./build.sh -c   -> clean build directory"
+        echo "  ./build.sh -d   -> debug build"
         exit 1
         ;;
-    esac
+ esac
 done
 
-echo "create build directory 'temp'"
-rm -rf ../temp
-mkdir ../temp
+# create build directory if not exists
+[ ! -d ../temp ] && mkdir ../temp
 cd ../temp
 
-# this step is always needed
-echo "run cmake with toolchain file for 64bit compilation"
+echo "run cmake with toolchain file for $build_type compilation"
+cmake ../pjt -DCMAKE_BUILD_TYPE=$build_type -DCMAKE_TOOLCHAIN_FILE=../pjt/toolchain_ubuntu.cmake 
 
-cmake ../pjt -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../pjt/toolchain_ubuntu.cmake 
-
-# only build the whole thing if no flag was given
 if [ "$build_only_lint_config" = false ] ; then
-    echo "build and install"
-    cmake --build . --target all -- -j4
+    echo "build only changed files and install"
+    cmake --build . --target all -- -j$(nproc)
     cmake --build . --target install
 fi
 
-#return
 cd ../bat

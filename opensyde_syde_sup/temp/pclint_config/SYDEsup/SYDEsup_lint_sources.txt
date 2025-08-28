@@ -1,0 +1,5 @@
+/home/marko/Grimme/openSYDE/opensyde_syde_sup/src/C_SydeSup.cpp
+/home/marko/Grimme/openSYDE/opensyde_syde_sup/src/C_SupSuSequences.cpp
+/home/marko/Grimme/openSYDE/opensyde_syde_sup/src/C_SupCreatePackage.cpp
+/home/marko/Grimme/openSYDE/opensyde_syde_sup/src/C_SydeSupLinux.cpp
+/home/marko/Grimme/openSYDE/opensyde_syde_sup/src/LinuxMain.cpp

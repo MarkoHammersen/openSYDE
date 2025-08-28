@@ -6,9 +6,9 @@ set(CMAKE_SYSTEM_PROCESSOR amd64)
 
 # use gcc-9 and g++-9 explicitly; that was what SYDEsup was originally tested with
 # change to "gcc" and "g++" to use default compilers
-set(CMAKE_C_COMPILER gcc-9)
+set(CMAKE_C_COMPILER gcc)
 set(CMAKE_C_FLAGS "-m64 -Wno-deprecated-declarations -fPIC")
-set(CMAKE_CXX_COMPILER g++-9)
+set(CMAKE_CXX_COMPILER g++)
 set(CMAKE_CXX_FLAGS "-m64 -Wno-deprecated-declarations -fPIC")
 
 set(CMAKE_SHARED_LINKER_FLAGS "-m64")

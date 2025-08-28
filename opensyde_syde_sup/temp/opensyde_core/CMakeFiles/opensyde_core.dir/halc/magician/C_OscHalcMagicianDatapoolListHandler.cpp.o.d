@@ -1,0 +1,37 @@
+opensyde_core/CMakeFiles/opensyde_core.dir/halc/magician/C_OscHalcMagicianDatapoolListHandler.cpp.o: \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/magician/C_OscHalcMagicianDatapoolListHandler.cpp \
+ /usr/include/stdc-predef.h \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../src/precomp_headers.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/stwtypes/stwtypes.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/stwerrors.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/magician/C_OscHalcMagicianDatapoolListHandler.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/project/system/node/C_OscNodeDataPoolList.hpp \
+ /usr/include/c++/11/iostream /usr/include/c++/11/vector \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclString.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/project/system/node/C_OscNodeDataPoolListElement.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/project/system/node/C_OscNodeDataPoolContent.hpp \
+ /usr/include/c++/11/string \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../libs/opensyde_core/kefex_diaglib/tgl_linux/TglTasks.hpp \
+ /usr/include/pthread.h \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclDynamicArray.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/project/system/node/C_OscNodeDataPoolDataSet.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/project/system/C_OscSystemNameMaxCharLimitChangeReportItem.hpp \
+ /usr/include/c++/11/list \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/configuration/C_OscHalcConfig.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/base/C_OscHalcDefBase.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefDomain.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefChannelDef.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefChannelValues.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefStruct.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefElement.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefContent.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/project/system/node/C_OscNodeDataPoolContent.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefContentBitmaskItem.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefChannelUseCase.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefChannelAvailability.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/configuration/C_OscHalcConfigDomain.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/configuration/C_OscHalcConfigChannel.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/configuration/C_OscHalcConfigParameterStruct.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/configuration/C_OscHalcConfigParameter.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/halc/definition/C_OscHalcDefContent.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../libs/opensyde_core/kefex_diaglib/tgl_linux/TglUtils.hpp

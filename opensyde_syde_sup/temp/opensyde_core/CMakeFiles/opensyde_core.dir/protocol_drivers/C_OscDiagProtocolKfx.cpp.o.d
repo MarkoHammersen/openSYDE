@@ -1,0 +1,46 @@
+opensyde_core/CMakeFiles/opensyde_core.dir/protocol_drivers/C_OscDiagProtocolKfx.cpp.o: \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/protocol_drivers/C_OscDiagProtocolKfx.cpp \
+ /usr/include/stdc-predef.h \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../src/precomp_headers.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/stwtypes/stwtypes.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/stwerrors.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/logging/C_OscLoggingHandler.hpp \
+ /usr/include/c++/11/fstream /usr/include/c++/11/map \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclString.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../libs/opensyde_core/kefex_diaglib/tgl_linux/TglUtils.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../libs/opensyde_core/kefex_diaglib/tgl_linux/TglTime.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/pjt/../libs/opensyde_core/kefex_diaglib/tgl_linux/TglTasks.hpp \
+ /usr/include/pthread.h \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclDynamicArray.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/protocol_drivers/C_OscDiagProtocolKfx.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/protocol_drivers/C_OscDiagProtocolBase.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/kefex_diaglib/dl_kefex/CKFXCommunicationKEFEX.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/kefex_diaglib/dl_kefex/CKFXComm.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/kefex_diaglib/dl_kefex/CKFXCommConfiguration.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclIniFile.hpp \
+ /usr/include/c++/11/string \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclString.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclStringList.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/scl/C_SclDynamicArray.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/DiagLib_config.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/C_OscUtils.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/can_dispatcher/dispatcher/C_CanDispatcher.hpp \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_algobase.h \
+ /usr/include/c++/11/bits/allocator.h \
+ /usr/include/c++/11/bits/stl_construct.h \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/concept_check.h \
+ /usr/include/c++/11/bits/stl_iterator_base_types.h \
+ /usr/include/c++/11/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/11/initializer_list \
+ /usr/include/c++/11/debug/assertions.h \
+ /usr/include/c++/11/bits/range_access.h \
+ /usr/include/c++/11/bits/deque.tcc \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/can_dispatcher/dispatcher/C_CanBase.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/can_dispatcher/dispatcher/stw_can.hpp \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/kefex_diaglib/dl_kefex/CKFXProtocol.hpp \
+ /usr/include/c++/11/cstdio \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
+ /usr/include/stdio.h \
+ /home/marko/Grimme/openSYDE/opensyde_syde_sup/libs/opensyde_core/kefex_diaglib/dl_kefex/CKFXCommConfiguration.hpp
